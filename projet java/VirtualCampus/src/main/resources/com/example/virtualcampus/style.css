@@ -1,0 +1,139 @@
+.login-field {
+    -fx-pref-height: 35;
+    -fx-font-size: 14;
+}
+
+.login-button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-font-size: 14;
+    -fx-pref-height: 35;
+}
+
+.login-button:hover {
+    -fx-background-color: #1976D2;
+}
+
+.table-cell {
+    -fx-alignment: CENTER;
+}
+/* Global Styles */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: white;
+}
+
+/* Button Styles */
+.button {
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 3, 0, 0, 1);
+    -fx-transition: all 0.2s ease-in-out;
+}
+
+.button:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 2);
+}
+
+.button:pressed {
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+/* Specific button styles */
+#startButton {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+
+#stopButton {
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+}
+
+#saveButton {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+#resetButton {
+    -fx-background-color: #FF9800;
+    -fx-text-fill: white;
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+    -fx-accent: linear-gradient(to right, #f44336, #ffeb3b, #4CAF50);
+}
+
+.progress-bar .track {
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 10px;
+}
+
+.progress-bar .bar {
+    -fx-background-radius: 10px;
+}
+
+/* Label Styles */
+.label {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Grid and Layout Styles */
+GridPane {
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 1);
+    -fx-padding: 15px;
+}
+
+VBox, HBox {
+    -fx-alignment: center;
+}
+
+/* ScrollPane Styles */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 5px;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #bdbdbd;
+    -fx-background-radius: 5px;
+}
+
+/* Event Log Styles */
+#eventLogContainer {
+    -fx-background-color: #f9f9f9;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px;
+}
+.resource-card {
+    -fx-padding: 10;
+    -fx-background-color: #f5f5f5;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 1);
+}
+
+.resource-card-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 14;
+}
+
+.resource-card-percentage {
+    -fx-font-size: 18;
+}

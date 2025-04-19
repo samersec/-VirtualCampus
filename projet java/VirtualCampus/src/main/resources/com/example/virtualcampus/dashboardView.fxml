@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.virtualcampus.Controllers.DashboardController" spacing="20">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Tableau de board" style="-fx-font-size: 24; -fx-font-weight: bold"/>
+
+    <!-- First row of status boxes (4 columns) -->
+    <GridPane hgap="20" vgap="20">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+        </columnConstraints>
+
+        <!-- WiFi Status Box -->
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #f0f0f0; -fx-padding: 15; -fx-background-radius: 10;" GridPane.columnIndex="0">
+            <Label text="WiFi Status" style="-fx-font-weight: bold; -fx-font-size: 16;"/>
+            <ProgressBar fx:id="wifiProgress" progress="0" style="-fx-accent: #4CAF50;" prefWidth="200"/>
+            <Label fx:id="wifiLabel" alignment="CENTER" textAlignment="CENTER" style="-fx-font-size: 14;"/>
+        </VBox>
+
+        <!-- Electricity Status Box -->
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #f0f0f0; -fx-padding: 15; -fx-background-radius: 10;" GridPane.columnIndex="1">
+            <Label text="Electricity" style="-fx-font-weight: bold; -fx-font-size: 16;"/>
+            <ProgressBar fx:id="electricityProgress" progress="0" style="-fx-accent: #2196F3;" prefWidth="200"/>
+            <Label fx:id="electricityLabel" alignment="CENTER" textAlignment="CENTER" style="-fx-font-size: 14;"/>
+        </VBox>
+
+        <!-- Water Status Box -->
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #f0f0f0; -fx-padding: 15; -fx-background-radius: 10;" GridPane.columnIndex="2">
+            <Label text="Water" style="-fx-font-weight: bold; -fx-font-size: 16;"/>
+            <ProgressBar fx:id="waterProgress" progress="0" style="-fx-accent: #FF9800;" prefWidth="200"/>
+            <Label fx:id="waterLabel" alignment="CENTER" textAlignment="CENTER" style="-fx-font-size: 14;"/>
+        </VBox>
+
+        <!-- Space Status Box -->
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #f0f0f0; -fx-padding: 15; -fx-background-radius: 10;" GridPane.columnIndex="3">
+            <Label text="Space" style="-fx-font-weight: bold; -fx-font-size: 16;"/>
+            <ProgressBar fx:id="spaceProgress" progress="0" style="-fx-accent: #9C27B0;" prefWidth="200"/>
+            <Label fx:id="spaceLabel" alignment="CENTER" textAlignment="CENTER" style="-fx-font-size: 14;"/>
+        </VBox>
+    </GridPane>
+
+    <!-- Second row of status boxes (4 columns) - Adding Satisfaction here -->
+    <GridPane hgap="20" vgap="20">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+            <ColumnConstraints percentWidth="25"/>
+        </columnConstraints>
+
+        <!-- Satisfaction Status Box -->
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #f0f0f0; -fx-padding: 15; -fx-background-radius: 10;" GridPane.columnIndex="0">
+            <Label text="Satisfaction" style="-fx-font-weight: bold; -fx-font-size: 16;"/>
+            <ProgressBar fx:id="satisfactionProgress" progress="0" style="-fx-accent: #4CAF50;" prefWidth="200"/>
+            <Label fx:id="satisfactionLabel" alignment="CENTER" textAlignment="CENTER" style="-fx-font-size: 14;"/>
+        </VBox>
+
+        <!-- You can add more status boxes here if needed -->
+    </GridPane>
+
+    <!-- Charts section -->
+    <HBox spacing="20">
+        <PieChart fx:id="populationChart" title="Population Distribution" prefWidth="350" prefHeight="300"/>
+        <BarChart fx:id="occupationChart" title="Building Occupation" prefWidth="350" prefHeight="300">
+            <xAxis>
+                <CategoryAxis label="Buildings"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Occupation (%)"/>
+            </yAxis>
+        </BarChart>
+    </HBox>
+</VBox>

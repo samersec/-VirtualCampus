@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.virtualcampus.Controllers.LoginController"
+      alignment="CENTER" spacing="20"
+      style="-fx-background-color: white;">
+    <padding>
+        <Insets top="20" right="40" bottom="20" left="40"/>
+    </padding>
+
+    <Text text="Virtual Campus Login"
+          style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+
+    <VBox spacing="10" maxWidth="300">
+        <TextField fx:id="usernameField"
+                   promptText="Username"
+                   styleClass="login-field"/>
+
+        <PasswordField fx:id="passwordField"
+                       promptText="Password"
+                       styleClass="login-field"/>
+
+        <Button text="Login"
+                onAction="#handleLogin"
+                styleClass="login-button"
+                maxWidth="Infinity"/>
+
+        <Label fx:id="errorLabel"
+               textFill="red"
+               wrapText="true"
+               visible="false"/>
+    </VBox>
+</VBox>

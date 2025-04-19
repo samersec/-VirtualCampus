@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.virtualcampus.Controllers.BatimentController" spacing="20">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Batiments" style="-fx-font-size: 24; -fx-font-weight: bold"/>
+
+    <TableView fx:id="batimentTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="batimentId" text="ID"/>
+            <TableColumn fx:id="batimentNom" text="Nom"/>
+            <TableColumn fx:id="batimentType" text="Type"/>
+            <TableColumn fx:id="batimentCapacite" text="Capacité"/>
+            <TableColumn fx:id="batimentWifi" text="Consommation Wifi"/>
+            <TableColumn fx:id="batimentElect" text="Consommation Electricite"/>
+            <TableColumn fx:id="batimentEau" text="Consommation Eau"/>
+            <TableColumn fx:id="batimentImpact" text="Impact Satisfaction"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="10">
+        <Button text="Ajouter" onAction="#handleAddBatiment"/>
+        <Button text="Modifier" onAction="#handleEditBatiment"/>
+        <Button text="Supprimer" onAction="#handleDeleteBatiment"/>
+    </HBox>
+</VBox>

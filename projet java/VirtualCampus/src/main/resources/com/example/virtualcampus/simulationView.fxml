@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.virtualcampus.Controllers.SimulationViewController"
+            stylesheets="@style.css"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <top>
+        <HBox spacing="10" alignment="CENTER" style="-fx-background-color: #f0f0f0; -fx-padding: 10px;">
+            <Label text="Simulation du Campus" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="20" alignment="CENTER" style="-fx-padding: 20px;">
+            <GridPane hgap="10" vgap="10" alignment="CENTER">
+                <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+                <!-- Campus Status -->
+                <Label text="État du Campus:"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold;"
+                       GridPane.columnIndex="0" GridPane.rowIndex="0"
+                       GridPane.columnSpan="2"/>
+
+                <Label text="Satisfaction globale:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <ProgressBar fx:id="satisfactionBar" progress="1.0" prefWidth="200.0"
+                             style="-fx-accent: linear-gradient(to right, red, yellow, #00ff00);"
+                             GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label fx:id="satisfactionLabel" text="100%" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+                <Label text="Wi-Fi:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <Label fx:id="wifiStatusLabel" text="Fonctionnel" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                <Label text="Cafétéria:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <Label fx:id="cafeteriaStatusLabel" text="Ouverte" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <Label text="Nombre de visiteurs:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <Label fx:id="visitorCountLabel" text="0" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+                <!-- Event Log -->
+                <Label text="Journal des événements:"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold;"
+                       GridPane.columnIndex="0" GridPane.rowIndex="5"
+                       GridPane.columnSpan="2"/>
+
+                <ScrollPane prefHeight="150.0" prefWidth="400.0"
+                            GridPane.columnIndex="0" GridPane.rowIndex="6"
+                            GridPane.columnSpan="3">
+                    <VBox fx:id="eventLogContainer" spacing="5" style="-fx-padding: 5px;"/>
+                </ScrollPane>
+            </GridPane>
+        </VBox>
+    </center>
+
+    <bottom>
+        <HBox spacing="15" alignment="CENTER" style="-fx-padding: 15px; -fx-background-color: #f0f0f0;">
+            <Button fx:id="startButton" text="Démarrer" onAction="#handleStartSimulation"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;"/>
+            <Button fx:id="stopButton" text="Arrêter" onAction="#handleStopSimulation" disable="true"
+                    style="-fx-background-color: #f44336; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;"/>
+            <Button fx:id="saveButton" text="Sauvegarder" onAction="#handleSaveSimulation"
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;"/>
+            <Button fx:id="resetButton" text="Réinitialiser" onAction="#handleResetSimulation"
+                    style="-fx-background-color: #FF9800; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10px 20px;"/>
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.virtualcampus.Controllers.RessourceController">
+    <top>
+        <HBox alignment="CENTER" style="-fx-background-color: #2c3e50;">
+            <Label text="Resource Management" style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"
+                   HBox.hgrow="ALWAYS" alignment="CENTER"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20;">
+            <!-- Resource Status Section -->
+            <VBox spacing="10" style="-fx-background-color: #f8f9fa; -fx-border-color: #ddd; -fx-border-radius: 5; -fx-padding: 15;">
+                <Label text="Current Resource Status" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                <GridPane hgap="10" vgap="10">
+                    <Label text="Electricity:" GridPane.rowIndex="0" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                    <ProgressBar fx:id="electricityProgress" progress="0.7" prefWidth="200" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                    <Label fx:id="electricityLabel" text="70%" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+
+                    <Label text="Water:" GridPane.rowIndex="1" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                    <ProgressBar fx:id="waterProgress" progress="0.5" prefWidth="200" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                    <Label fx:id="waterLabel" text="50%" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+
+                    <Label text="WiFi:" GridPane.rowIndex="2" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                    <ProgressBar fx:id="wifiProgress" progress="0.9" prefWidth="200" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                    <Label fx:id="wifiLabel" text="90%" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+
+                    <Label text="Space:" GridPane.rowIndex="3" GridPane.columnIndex="0" style="-fx-font-weight: bold;"/>
+                    <ProgressBar fx:id="spaceProgress" progress="0.3" prefWidth="200" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                    <Label fx:id="spaceLabel" text="30%" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+                </GridPane>
+            </VBox>
+
+            <!-- Resource Consumption Chart -->
+            <VBox spacing="10">
+                <Label text="Resource Consumption Overview" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+                <BarChart fx:id="resourceChart" title="" legendVisible="true" animated="false"
+                          style="-fx-background-color: #f8f9fa; -fx-border-color: #ddd;">
+                    <xAxis>
+                        <CategoryAxis label="Resource Type" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Consumption (%)" upperBound="100" />
+                    </yAxis>
+                </BarChart>
+            </VBox>
+
+            <!-- Resource Controls -->
+            <HBox spacing="20" alignment="CENTER">
+                <Button text="Optimize Resources" fx:id="optimizeBtn" onAction="#optimizeResources"
+                        style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Calculate Consumption" fx:id="calculateBtn" onAction="#calculateConsumption"
+                        style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Generate Report" fx:id="reportBtn" onAction="#generateReport"
+                        style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+    </center>
+
+
+</BorderPane>
